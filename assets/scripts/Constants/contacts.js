@@ -1,0 +1,9 @@
+const CONTACT_EMAIL = 2;
+const CONTACT_WEB = 3;
+const CONTACT_PHONE = 1;
+
+export {
+    CONTACT_EMAIL,
+    CONTACT_PHONE,
+    CONTACT_WEB,
+};

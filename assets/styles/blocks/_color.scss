@@ -1,0 +1,22 @@
+.color {
+    width: 5px;
+    height: 100%;
+
+    &_for {
+        &_guest {
+            background-color: transparent;
+        }
+
+        &_participant {
+            background-color: #005b9b;
+        }
+
+        &_jury {
+            background-color: #e62b27;
+        }
+
+        &_curator {
+            background-color: #3098d4;
+        }
+    }
+}

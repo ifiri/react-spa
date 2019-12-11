@@ -1,0 +1,76 @@
+@mixin triangle($size, $color, $direction) {
+    $foreground-color: nth($color, 1);
+    $background-color: if(length($color) == 2, nth($color, 2), transparent);
+
+    $width: nth($size, 1) / 2;
+
+    $height: nth($size, length($size));
+    $height: if(length($size) > 1, $height, $height / 2);
+
+    @if $direction == up {
+
+        border-bottom: $height solid $foreground-color;
+        border-left: $width solid $background-color;
+        border-right: $width solid $background-color;
+
+    } @else if $direction == right {
+
+        border-bottom: $width solid $background-color;
+        border-left: $height solid $foreground-color;
+        border-top: $width solid $background-color;
+
+    } @else if $direction == down {
+
+        border-left: $width solid $background-color;
+        border-right: $width solid $background-color;
+        border-top: $height solid $foreground-color;
+
+    } @else if $direction == left {
+
+        border-bottom: $width solid $background-color;
+        border-right: $height solid $foreground-color;
+        border-top: $width solid $background-color;
+
+    }
+}
+
+@mixin clear-text-decoration() {
+    text-decoration: none;
+
+    &:hover, 
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+@mixin clear-list-style() {
+    list-style-type: none;
+
+    padding: 0;
+    margin: 0;
+}
+
+@mixin position($position, $coords) {
+    position: $position;
+
+    top: nth($coords, 1);
+    right: nth($coords, 2);
+    bottom: nth($coords, 3);
+    left: nth($coords, 4);
+}
+
+@mixin content-before($position: absolute, $display: block) {
+    &::before {
+        content: "";
+        display: $display;
+        position: $position;
+    }
+}
+
+@mixin content-after($position: absolute, $display: block) {
+    &::after {
+        content: "";
+        display: $display;
+        position: $position;
+    }
+}

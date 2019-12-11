@@ -1,0 +1,107 @@
+@mixin table() {
+    @include -table-base();
+
+    &__cell {
+        @include -table-cell();
+
+        &_heading {
+            @include -table-cell-heading();
+        }
+    }
+
+    &__row {
+        @include -table-row();
+
+        &_heading {
+            @include -table-row-heading();
+        }
+    }
+}
+
+@mixin -table-base() {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: $spacer;
+    background-color: $table-bg;
+
+    display: flex !important;
+    flex-wrap: wrap;
+}
+
+@mixin -table-row {
+    background-color: $white;
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    
+    &:hover {
+        background-color: $table-hover-bg;
+        color: $table-hover-color;
+    }
+}
+
+@mixin -table-row-heading() {
+    background-color: $table-heading-bg !important;
+
+    &:hover {
+        background-color: $table-heading-bg;
+        color: inherit;
+    }
+}
+
+@mixin -table-cell() {
+    padding: $table-cell-padding !important;
+    display: flex !important;
+    flex-wrap: wrap;
+    flex-direction: column;
+    vertical-align: top;
+
+    color: inherit;
+}
+
+@mixin -table-cell-heading() {
+    font-weight: 600;
+    color: $table-heading-color;
+    // border-top: $table-border-width solid $table-border-color;
+    vertical-align: bottom;
+}
+
+
+
+@mixin table-striped($selector: &) {
+    &__row {
+        &:not(#{$selector}__row_heading) {
+            &:nth-of-type(odd):not(:hover) {
+                background-color: $table-accent-bg;
+            }
+        }
+
+        &_heading {
+            @include -table-striped-row-heading();
+        }
+    }
+
+    &__cell {
+        @include -table-striped-cell();
+
+        &_heading {
+            @include -table-striped-cell-heading();
+        }
+    }
+}
+
+@mixin -table-striped-row-heading() {
+    background-color: $white;
+
+    &:hover {
+        background-color: $white;
+    }
+}
+
+@mixin -table-striped-cell() {
+    // border-top: $table-border-width solid $table-border-color;
+}
+
+@mixin -table-striped-cell-heading() {
+    // border-bottom: (2 * $table-border-width) solid $table-border-color;
+}

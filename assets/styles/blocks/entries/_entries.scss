@@ -1,0 +1,298 @@
+.entries {
+    @include table();
+    // @include table-striped();
+
+    margin-bottom: rem($entries-margin-bottom);
+
+    @media print { 
+        display: none !important;
+    }
+
+    &__cell {
+        border: 0 !important;
+        font-size: rem($entries-cell-font-size) !important;
+        font-weight: rem($entries-cell-font-weight) !important;
+
+        display: flex !important;
+        justify-content: center;
+
+        line-height: 1.2;
+        letter-spacing: -0.5px;
+        cursor: inherit;
+        height: 100%;
+
+        &-caption {
+            font-size: 14px !important;
+            font-weight: normal !important;
+
+            display: block;
+            // margin-top: auto;
+
+            color: #737a92;
+        }
+
+        &-content {
+            min-height: 1.15em;
+            max-width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__row {
+        @include transition();
+
+        width: 100%;
+        height: auto !important;
+        box-shadow: 0 6px 9px 0 rgba(144, 164, 183, 0.22);
+        margin-bottom: 20px;
+
+        &:hover {
+            box-shadow: 0 6px 9px 0 rgba(144, 164, 183, 0.5);
+        }
+    }
+
+    &__list {
+        display: flex !important;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    &__header {
+        display: flex !important;
+    }
+
+    &__active {
+        & .entries__cell:first-child {
+            position: relative;
+
+            &::before {
+                @include transition();
+                
+                content: "";
+                display: block;
+                opacity: 1;
+                position: absolute;
+                top: 0;
+                left: -2px;
+                bottom: 0;
+                width: 2px;
+
+                background-color: var(--primary);
+            }
+        }
+    }
+
+    // Cells
+    &__id {
+        padding-left: 0px !important;
+        padding-right: 10px !important;
+
+        vertical-align: middle;
+
+        width: rem($entries-cell-id-width);
+    }
+
+    &__color {
+        padding: 0 !important;
+
+        &:first-child {
+            border-top-left-radius: 2px;
+            border-bottom-left-radius: 2px;
+        }
+    }
+
+    &__corner {
+        justify-content: center;
+
+        padding-left: 100px !important;
+    }
+
+    &__check,
+    &__separator {
+        width: rem($entries-cell-check-width);
+        min-width: rem($entries-cell-check-width);
+        padding-right: rem(5px) !important;
+    }
+
+    &__check {
+        .checkbox__field::after,
+        .checkbox__field::before {
+            left: rem(2px);
+
+            top: 50%;
+            margin-top: rem(-6px); // half of checkbox height
+        }
+    }
+
+    &__check:not(&__cell_heading) {
+        cursor: pointer;
+    }
+
+    &__date,
+    &__start-date,
+    &__end-date {
+        width: 1%;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    &__title {
+        min-width: rem(200px);
+    }
+
+    &__fullname,
+    &__description {
+        flex-grow: 2;
+    }
+
+    &__description {
+        .description {
+            width: inherit;
+            min-height: 1em * 1.2; // line-height
+
+            overflow: hidden;
+
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+
+    &__place {
+        text-align: center;
+        width: 100px;
+    }
+
+    &__actions {
+        text-align: right;
+        white-space: nowrap;
+        flex-shrink: 2;
+        align-items: center;
+        display: flex !important;
+
+        .action {
+            opacity: 0;
+            fill: #000;
+
+            .entries__row:hover & {
+                opacity: 1;
+                fill: $white;
+            }
+        }
+
+        .action + .action {
+            margin-left: rem(15px);
+        }
+    }
+}
+
+.entries_type_company_departments,
+.entries_type_meetup_sections {
+    .entries__title {
+        width: 30%;
+    }
+
+    .entries__description {
+        width: 60%;
+    }
+}
+
+.entries_type_meetups {
+    .entries__logo {
+        width: 100px;
+    }
+
+    .entries__title {
+        width: 250px;
+    }
+
+    .entries__description {
+        width: 150px;
+    }
+
+    .entries__type {
+        width: 120px;
+    }
+
+    .entries__row {
+        cursor: pointer;
+    }
+
+    .entries__end-date,
+    .entries__start-date {
+        width: 135px;
+    }
+
+    .entries__code {
+        width: 65px;
+    }
+}
+
+.entries_type_works {
+    .entries__description {
+        width: rem(450px);
+    }
+}
+
+.entries_type_events {
+    .entries__title {
+        width: 30%;
+    }
+
+    .entries__description {
+        width: 30%;
+    }
+
+    .entries__curator {
+        width: 10%;
+    }
+
+    .entries__end-date,
+    .entries__start-date {
+        width: 15%;
+    }
+
+    .entries__type {
+        width: 10%;
+    }
+}
+
+.entries_type_participants {
+    .entries__photo {
+        width: 8%;
+    }
+
+    .entries__fullname {
+        width: 20%;
+    }
+    .entries__type {
+        width: 15%;
+    }
+
+    .entries__department {
+        width: 32%;
+    }
+
+    .entries__position {
+        width: 15%;
+    }
+}
+
+.entries_type_nominations {
+    .entries__description {
+        width: 50%;
+    }
+}
+
+.entries_type_nominees {
+    .entries__author {
+        width: 40%;
+    }
+
+    .entries__title {
+        width: 40%;
+    }
+
+    .entries__place {
+        width: 10%;
+    }
+}

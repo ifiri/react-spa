@@ -1,0 +1,13 @@
+.filter_type_clients {
+    .filter__item_type_bank {
+        @include make-col(3);
+    }
+
+    .filter__item_type_search-by-login {
+        @include make-col(4);
+
+        .bank__clients & {
+            @include make-col(4.8);
+        }
+    }
+}

@@ -1,0 +1,8 @@
+.cropper-img {
+    min-height: $cropper-img-min-height;
+    max-height: $cropper-img-max-height;
+    max-width: 100%;
+
+    display: block;
+    margin: 0 auto;
+}

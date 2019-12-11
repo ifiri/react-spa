@@ -1,0 +1,149 @@
+.action {
+    &__btn {
+        @include -button-base();
+    }
+    
+    &_type_remove {
+        &:not(:disabled) {
+            // @include button-variant($danger, $danger);
+        }
+    }
+
+    &_type_cancel,
+    &_type_delete {
+        min-width: 140px !important;
+    }
+
+    &_type_create {
+        min-width: 140px !important;
+        margin-left: 20px !important;
+
+        &.inside {
+            width: 100%;
+            margin-top: 40px;
+            margin-left: 0 !important;
+        }
+    }
+
+    &_type_save,
+    &_type_crop,
+    &_type_login,
+    &_type_ok {
+        &:not(:disabled) {
+            // @include button-variant($success, $success);
+        }
+
+        fill: $white;
+    }
+
+    &_type_cancel {
+        &:not(:disabled) {
+            // @include button-variant(#f2f4f8, $brand-lightgray);
+        }
+
+        &:disabled {
+            background-color: transparent;
+            border-color: #d1d7db;
+            color: #d1d7db;
+        }
+    }
+
+    // Inline Actions
+    &_type_add-media {
+        // @include button-variant(#6c757d, #6c757d);
+    }
+
+    &_type_create {
+        &:hover, &:active {
+            color: #fff !important;
+        }
+    }
+
+    &_type_createstandard {
+        color: $white;
+        font-size: 1rem;
+
+        > button {
+            background-color: #369b00;
+
+            &:hover {
+                background-color: darken(#369b00, 10%);
+            }
+        }
+    }
+
+    &_type_field-add,
+    &_type_field-remove {
+        @include border-left-radius(0);
+
+        padding-right: 12px;
+        padding-left: 12px;
+
+        &:hover, &:active {
+            color: $white !important;
+        }
+
+        &:hover, &:focus, &:active {
+            padding-right: 12px;
+            padding-left: 12px;
+        }
+    }
+
+    &_type_field-remove,
+    &_type_entry-delete {
+        @include button-outline-variant(#fb5f60, #fb5f60);
+
+    }
+
+    &_type_field-add {
+        @include button-outline-variant(#6c757d, #6c757d);
+    }
+
+    &_type_filter-reset {
+        @include transition();
+
+        min-width: 1px;
+
+        font-size: rem(12px);
+        font-weight: 600;
+
+        background-color: transparent;
+        border: 0 none;
+        padding: 0;
+
+        color: #ffa246;
+        fill: #ffa246;
+
+        &:hover {
+            color: darken(#ffa246, 15%);
+            fill: darken(#ffa246, 15%);
+        }
+
+        &:active, &:focus {
+            padding: 0;
+        }
+    }
+
+    &_type_filter-reset {
+        color: $danger;
+        fill: $danger;
+
+        &:hover {
+            color: darken($danger, 15%);
+            fill: darken($danger, 15%);
+        }
+    }
+
+    // Iconic Actions
+    &_type_view {
+        background-color: transparent;
+        padding: 0;
+        min-width: 1px;
+        fill: $white;
+
+        &:active, 
+        &:focus {
+            padding: 0;
+        }
+    }
+}

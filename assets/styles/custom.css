@@ -1,0 +1,39 @@
+.react-datepicker__time-container {
+    width: 140px;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box {
+    width: 140px;
+}
+
+.react-datepicker-wrapper {
+    width: 100%;
+}
+
+.react-datepicker__input-container {
+    width: 100%;
+}
+
+.app > header.header {
+    position: fixed;
+    top:0;
+}
+
+.app > main.content {
+    margin-top: 64px;
+}
+
+textarea,
+button,
+select,
+input[type="text"],
+input[type="button"],
+input[type="submit"] {
+     -webkit-appearance: none;
+     border-radius: 0;
+     border: none;
+}
+
+.app_page_auth {
+    background-color: #fbfbfb;
+}

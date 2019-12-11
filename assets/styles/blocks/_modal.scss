@@ -1,0 +1,298 @@
+.modal {
+    // @include position(fixed, $header-height 0 0 0);
+    // @include position(fixed, 0 0 0 0);
+
+    // display: block;
+    // overflow: hidden;
+    // outline: 0;
+
+    // min-height: calc(100vh - #{$header-height});
+    // min-height: 100vh;
+
+    // background-color: $backdrop-bg;
+
+    z-index: 99999;
+
+    .app_page_auth & {
+        top: 0;
+    }
+
+    // @media print { 
+    //     background-color: transparent;
+    // }
+
+    &__dialog {
+        // position: relative;
+
+        // width: auto;
+        // max-width: rem($modal-md);
+
+        // margin: $modal-dialog-margin auto;
+        // pointer-events: none;
+
+        // Breakpoints
+        @include media-breakpoint-up(sm) {
+            max-width: $modal-lg;
+            margin: $modal-dialog-margin auto;
+        }
+
+        @include media-breakpoint-up(lg) {
+            max-width: $modal-lg;
+        }
+    }
+
+    &__content {
+        // @include border-radius($border-radius-lg);
+        // @include box-shadow($modal-content-box-shadow-xs);
+
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        
+        width: 100%;
+        // background-color: $modal-content-bg;
+
+        // border: $modal-content-border-width solid $modal-content-border-color;
+
+        pointer-events: auto;
+
+        // @include media-breakpoint-up(sm) {
+        //     @include box-shadow($modal-content-box-shadow-sm-up);
+        // }
+
+        @media print { 
+            border: 0 none;
+        }
+    }
+
+    &__header {
+        // @include border-top-radius($border-radius-lg);
+
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: $modal-header-padding;
+
+        position: relative;
+    }
+
+    &__title {
+        margin-bottom: 0;
+        padding: 0 0 10px 0 !important;
+
+        // font-weight: $modal-title-font-weight;
+        // font-size: rem($modal-title-font-size);
+        // color: $modal-title-color;
+        
+        // letter-spacing: -1px;
+
+        // line-height: $modal-title-line-height;
+    }
+
+    &__body {
+        position: relative;
+
+        flex: 1 1 auto;
+
+        margin: $modal-inner-padding;
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        padding: $modal-inner-padding;
+        padding-top: rem($modal-footer-vertical-offset);
+
+        > :not(:first-child) { 
+            margin-left: .5rem; 
+        }
+
+        @media print { 
+            display: none !important;
+        }
+    }
+
+    &__close {
+        @include transition();
+
+        position: absolute;
+        top: 5px;
+        right: 0px;
+
+        padding: rem($modal-close-padding);
+
+        background: none;
+        border: 0 none;
+
+        font-size: $modal-close-size;
+        line-height: 1;
+
+        cursor: pointer;
+
+        color: $modal-close-color;
+
+        z-index: 1000;
+
+        &:hover {
+            color: $modal-close-color-hover;
+        }
+
+        &:active, &:focus {
+            padding: rem($modal-close-padding);
+        }
+
+        @media print { 
+            display: none !important;
+        }
+    }
+
+    &__disclaimer {
+        font-size: rem($modal-disclaimer-font-size);
+        color: $modal-disclaimer-color;
+
+        margin-right: auto;
+    }
+
+    &__loader {
+        @include position(absolute, 0 0 0 0);
+        @include transition($modal-transition);
+
+        display: none;
+        opacity: 1;
+
+        background-color: $modal-loader-color;
+
+        &::after {
+            @include position(absolute, 0 0 0 0);
+            @include preloader();
+
+            content: attr(data-caption);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            margin-top: 0;
+            z-index: 150;
+        }
+
+        z-index: 100;
+    }
+
+    // States
+    &_loading {
+        .modal__loader {
+            display: block;
+        }
+    }
+
+    &_loaded {
+        .modal__loader {
+            display: block;
+            opacity: 0;
+        }
+    }
+
+    // Modificators
+    &_opening {
+        // animation-name: fade2;
+        // animation-duration: 250ms;
+        // animation-fill-mode: both;
+        // animation-timing-function: ease-in-out;
+
+        .modal__dialog {
+            // animation-name: fade;
+            // animation-duration: 250ms;
+            // animation-fill-mode: both;
+            // animation-timing-function: ease-in-out;
+        }
+    }
+    &_opened {
+        // opacity: 1;
+
+        .modal__dialog { 
+            // transform: translate(0, 0);
+        }
+    }
+
+    &_closing {
+        // animation-name: fade2-reverse;
+        // animation-duration: 250ms;
+        // animation-fill-mode: both;
+        // animation-timing-function: ease-in-out;
+
+        .modal__dialog {
+            // animation-name: fade-reverse;
+            // animation-duration: 250ms;
+            // animation-direction: both;
+            // animation-fill-mode: backwards;
+            // animation-timing-function: ease-in-out;
+        }
+    }
+
+    &_centered {
+        display: flex;
+        align-items: center;
+    }
+
+    // Another blocks
+    .user-role {
+        flex-basis: 100%;
+        color: #a2a5ab;
+    }
+}
+
+.modal_size_sm {
+    .modal__dialog {
+        max-width: rem($modal-sm);
+        width: rem($modal-sm);
+    }
+}
+
+.modal_size_lg {
+    .modal__dialog {
+        max-width: rem($modal-lg);
+        width: rem($modal-lg);
+    }
+}
+
+.modal_size_xl {
+    .modal__dialog {
+        max-width: 1280px;
+        width: 1280px;
+    }
+}
+
+.modal_type_notice,
+.modal_type_confirm,
+.modal_type_error {
+    .modal__body {
+        margin: 0px 30px;
+    }
+
+    .modal__dialog {
+        // max-width: rem(380px);
+    }
+}
+
+.modal_type_notice,
+.modal_type_confirm,
+.modal_type_error {
+    z-index: 9999;
+
+    .modal__dialog {
+        max-width: rem($modal-sm);
+        width: rem($modal-sm);
+    }
+}
+
+.modal_type_view {
+    .modal__body {
+        margin: 0;
+    }
+}

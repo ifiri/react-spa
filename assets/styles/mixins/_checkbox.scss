@@ -1,0 +1,109 @@
+@mixin checkbox() {
+    @include -checkbox-base();
+
+    &__field {
+        @include -checkbox-field();
+    }
+
+    &__input {
+        @include -checkbox-input();
+    }
+}
+
+@mixin -checkbox-base() {
+    position: relative;
+    display: block;
+    min-height: (1rem * $line-height-base);
+    padding-left: $custom-control-gutter;
+
+    margin-bottom: 0;
+}
+
+@mixin -checkbox-input($selector: &) {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+    &:checked ~ #{$selector}__field {
+        &::before {
+            @include gradient-bg($custom-control-indicator-checked-bg);
+            @include box-shadow($custom-control-indicator-checked-box-shadow);
+
+            color: $custom-control-indicator-checked-color;
+        }
+
+        &::after {
+            background-image: $custom-checkbox-indicator-icon-checked;
+        }
+    }
+
+    &:focus ~ #{$selector}::before {
+        // @include box-shadow();
+        box-shadow: $custom-control-indicator-focus-box-shadow;
+    }
+
+    &:active ~ #{$selector}::before {
+        @include box-shadow($custom-control-indicator-active-box-shadow);
+
+        color: $custom-control-indicator-active-color;
+        background-color: $custom-control-indicator-active-bg;
+    }
+
+    &:disabled {
+        ~ #{$selector} {
+            color: $custom-control-label-disabled-color;
+
+            &::before {
+                background-color: $custom-control-indicator-disabled-bg;
+            }
+        }
+
+        &:checked ~ #{$selector}::before {
+            background-color: $custom-control-indicator-checked-disabled-bg;
+        }
+    }
+}
+
+@mixin -checkbox-field() {
+    @include content-before();
+    @include content-after();
+
+    cursor: pointer;
+
+    margin-bottom: 0;
+
+    &::before {
+        @include box-shadow($custom-control-indicator-box-shadow);
+        @include border-radius($custom-checkbox-indicator-border-radius);
+
+        border: 1px solid $custom-checkbox-border-color;
+
+        top: (($line-height-base - rem($custom-control-indicator-size)) / 2);
+        left: 0;
+
+        display: block;
+
+        width: rem($custom-control-indicator-size);
+        height: rem($custom-control-indicator-size);
+
+        pointer-events: none;
+        user-select: none;
+        background-color: $custom-control-indicator-bg;
+    }
+
+    &::after {
+        @include border-radius($custom-checkbox-indicator-border-radius);
+        
+        top: (($line-height-base - rem($custom-control-indicator-size)) / 2);
+        left: 0;
+
+        display: block;
+
+        width: rem($custom-control-indicator-size);
+        height: rem($custom-control-indicator-size);
+
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: $custom-control-indicator-bg-size;
+    }
+}

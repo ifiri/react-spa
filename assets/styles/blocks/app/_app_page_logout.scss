@@ -1,0 +1,24 @@
+.app_page_logout {
+    height: 100%; // only ie
+    
+    &::before {
+        content: "";
+        display: block;
+        position: fixed;
+        
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        z-index: 99999;
+
+        background-color: $primary;
+        opacity: 0;
+
+        animation-name: fade2;
+        animation-duration: 250ms;
+        animation-fill-mode: both;
+        animation-timing-function: ease-in-out;
+    }
+}

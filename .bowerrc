@@ -1,0 +1,8 @@
+{
+  "directory" : "assets/vendor/",
+  "analytics": false,
+  "resolvers": [
+    "bower-npm-resolver"
+  ],
+  "allow-root": true
+}

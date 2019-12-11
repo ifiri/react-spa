@@ -1,0 +1,12 @@
+.logo {
+    max-width: 100%;
+
+    width: auto;
+    max-width: 100%;
+    max-height: rem($logo-max-height);
+
+    .form_type_auth & {
+        width: 75%;
+        max-height: 99999px;
+    }
+}

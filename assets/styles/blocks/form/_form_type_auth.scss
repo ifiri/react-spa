@@ -1,0 +1,88 @@
+// .form_type_auth {
+//     width: rem(400px);
+//     // height: 100px;
+//     // min-height: 300px;
+//     display: block;
+
+//     background: $white;
+
+//     border-radius: 3px;
+//     padding: 35px 40px 40px;
+
+//     animation-name: fade2;
+//     animation-duration: 250ms;
+//     animation-fill-mode: both;
+//     animation-timing-function: ease-in-out;
+
+//     .form__row {
+//         width: 85%;
+
+//         margin-left: auto;
+//         margin-right: auto;
+//         margin-top: 15px;
+//     }
+
+//     .form__submit {
+//         width: 85%;
+//         color: $white !important;
+
+//         &:disabled {
+//             background-color: lighten($brand-blue, 25%);
+//             pointer-events: none;
+//         }
+//     }
+
+//     .form__title {
+//         font-size: 22px;
+//         text-align: center;
+//         line-height: 1.2;
+//         margin-bottom: 20px;
+//     }
+
+//     .form__header {
+//         margin-bottom: rem(50px);
+//         width: 80%;
+//         height: rem(35px);
+//         margin-left: auto;
+//         margin-right: auto;
+//         text-align: center;
+//     }
+
+//     .form__footer {
+//         display: block;
+//         padding: 0;
+//         margin: 30px 0 0;
+
+//         text-align: center;
+
+//         &::before {
+//             display: none;
+//         }
+//     }
+// }
+
+.form_type_auth {
+    .form__error {
+        width: 85%;
+        @include alert-variant(
+            theme-color-level('danger', $alert-bg-level), 
+            theme-color-level('danger', $alert-border-level), 
+            theme-color-level('danger', $alert-color-level)
+        );
+
+        text-align: center;
+
+        padding: 10px 15px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+
+        display: none;
+
+        border-radius: 3px;
+
+        &_shown {
+            display: block;
+        }
+    }
+}

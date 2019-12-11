@@ -1,0 +1,8 @@
+.app_page_auth {
+    background-color: $primary;
+    height: 100%; // only ie
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

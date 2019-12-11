@@ -1,0 +1,62 @@
+@function em($pixels, $base: $font-size-base-px) {
+    @if unit($base) == 'rem' {
+        $base: px(strip-units($font-size-base-px) / strip-units($base));
+    }
+
+    @if unit($pixels) == 'px' {
+        $ems: ($pixels / $base) * 1em;
+
+        @return $ems;
+    }
+
+    @return $pixels;
+}
+
+@function rem($value, $base: $font-size-base-px) {
+    @if $value == auto {
+        @return $value;
+    }
+
+    @if type-of($value) == 'list' {
+        $list: ();
+        $index: 1;
+
+        @each $current in $value {
+            @if unit($current) == 'px' {
+                $rems: ($current / $base) * 1rem;
+
+                $value: set-nth($value, $index, $rems);
+            }
+
+            $index: $index + 1;
+        }
+    } @else {
+        @if unit($value) == 'px' {
+            $rems: ($value / $base) * 1rem;
+
+            @return $rems;
+        }
+    }
+
+    
+  
+    @return $value;
+}
+
+@function px($value) {
+    @if unit($value) != 'px' {
+        $pxs: strip-units($value) * 1px;
+
+        @return $pxs;
+    }
+  
+    @return $value;
+}
+
+@function strip-units($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+}

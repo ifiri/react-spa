@@ -1,0 +1,40 @@
+.menu {
+    @include clear-list-style();
+
+    &__item {
+        display: inline-block;
+
+        line-height: 1;
+
+        margin-left: rem($menu-items-gutter);
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+
+    &__link {
+        font-size: inherit;
+        color: $menu-link-color;
+
+        &_active,
+        &_active:hover {
+            color: $white;
+
+            pointer-events: none;
+        }
+
+        &_clickable,
+        &_clickable:hover {
+            pointer-events: all;
+        }
+
+        &:hover:not(&_active) {
+            color: $white;
+        }
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}

@@ -1,0 +1,5 @@
+const MODAL_ANIMATION_SPEED = 250;
+
+export {
+    MODAL_ANIMATION_SPEED,
+};

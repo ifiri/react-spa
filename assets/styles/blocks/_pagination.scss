@@ -1,0 +1,59 @@
+.pagination {
+    @include make-col(4);
+    
+    display: block;
+    float: right;
+
+    padding: 0;
+    margin: 0;
+
+    &__link,
+    &__next,
+    &__prev {
+        @include transition($pagination-transition);
+
+        margin: 1px;
+
+        display: inline-block;
+
+        padding: $pagination-padding-y $pagination-padding-x;
+
+        line-height: $pagination-line-height;
+        color: $pagination-color;
+        background-color: $pagination-bg;
+
+        border: $pagination-border-width solid $pagination-border-color;
+        cursor: pointer;
+
+        &_active {
+            color: $pagination-active-color;
+            font-weight: bold;
+
+            pointer-events: none;
+        }
+
+        &_disabled {
+            color: $pagination-disabled-color;
+            background-color: $pagination-disabled-bg;
+            border-color: $pagination-disabled-border-color;
+
+            pointer-events: none;
+        }
+
+        &:hover {
+            color: $pagination-hover-color;
+            background-color: $pagination-hover-bg;
+            border-color: $pagination-hover-border-color;
+
+            text-decoration: none;
+        }
+
+        &:focus {
+            outline: 1px dotted;
+        }
+    }
+
+    &__separator {
+        padding: rem($pagination-separator-padding-y) rem($pagination-separator-padding-x);
+    }
+}

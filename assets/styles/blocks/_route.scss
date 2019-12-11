@@ -1,0 +1,106 @@
+.route {
+    $prefix: &;
+
+    max-width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    &_enter {
+        opacity: 0;
+    }
+
+    &_entering {
+        opacity: 1;
+
+        transition: all 250ms $transition-function !important;
+    }
+
+    // Exit animation
+    &_exit {
+        opacity: 1;
+    }
+
+    &_exiting {
+        opacity: 0;
+
+        transition: all 250ms $transition-function !important;
+    }
+
+    &_entered {
+        position: relative;
+    }
+
+    // Different directions
+    &_from_right {
+        &#{$prefix}_enter {
+            transform: translate(100%, 0);
+        }
+
+        &#{$prefix}_entering {
+            transform: translate(0, 0);
+        }
+
+        &#{$prefix}_exit {
+            transform: translate(0, 0);
+        }
+
+        &#{$prefix}_exiting {
+            transform: translate(-100%, 0);
+        }
+    }
+
+    &_from_left {
+        &#{$prefix}_enter {
+            transform: translate(-100%, 0);
+        }
+
+        &#{$prefix}_entering {
+            transform: translate(0, 0);
+        }
+
+        &#{$prefix}_exit {
+            transform: translate(0, 0);
+        }
+
+        &#{$prefix}_exiting {
+            transform: translate(100%, 0);
+        }
+    }
+
+    &_from_bottom {
+        &#{$prefix}_enter {
+            transform: translate(0, 100%);
+        }
+
+        &#{$prefix}_entering {
+            transform: translate(0, 0);
+        }
+
+        &#{$prefix}_exit {
+            transform: translate(0, 0);
+        }
+
+        &#{$prefix}_exiting {
+            transform: translate(0, -100%);
+        }
+    }
+
+    &_from_top {
+        &#{$prefix}_enter {
+            transform: translate(0, -100%);
+        }
+
+        &#{$prefix}_entering {
+            transform: translate(0, 0);
+        }
+
+        &#{$prefix}_exit {
+            transform: translate(0, 0);
+        }
+
+        &#{$prefix}_exiting {
+            transform: translate(0, 100%);
+        }
+    }
+}

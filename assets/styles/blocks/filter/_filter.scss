@@ -1,0 +1,86 @@
+.filter {
+    display: flex;
+    align-items: flex-end;
+
+    min-height: rem($filter-min-height);
+    
+    margin-left: auto;
+
+    @media print { 
+        display: none !important;
+    }
+
+    &__label {
+        color: $filter-label-color;
+        font-size: rem($filter-label-font-size);
+        margin-bottom: 0;
+
+        width: 100%;
+    }
+
+    &__item {
+        position: relative;
+        margin-top: 0;
+
+        // Hack due to bug in IE with flex-basis
+        &:not(:last-child) {
+            margin-right: rem($filter-item-gutter-width);
+        }
+
+        select, input {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .select {
+            &__caret {
+                color: #c0c3cc;
+            }
+        }
+        select {
+            padding-top: 10px;
+            padding-left: 35px;
+            width: 100%;
+
+            box-sizing: border-box;
+        }
+
+        .icon {
+            position: absolute;
+            top: 11px;
+            left: 10px;
+            font-size: 1rem;
+            color: #c0c3cc;
+
+            pointer-events: none;
+
+            z-index: 10;
+        }
+    }
+
+    &__results {
+        font-weight: $filter-results-font-weight;
+        font-size: rem($filter-results-font-size);
+        letter-spacing: -1px;
+        line-height: 1;
+    }
+
+
+    // Actions
+    &__actions {
+        @include -actions-base();
+
+        .action__btn {
+            padding: 9px 20px;
+            font-size: 16px;
+        }
+    }
+
+    &__create {
+        @include button();
+
+        &:not(:first-child) {
+            margin-left: rem($filter-item-gutter-width);
+        }
+    }
+}

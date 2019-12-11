@@ -1,0 +1,45 @@
+.page {
+    display: flex;
+    flex-direction: column;
+
+    &_login {
+        background-color: $brand-color;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &_loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        background-color: #fff;
+        position: relative;
+
+        .loader {
+            display: inline-block;
+        }
+    }
+}
+
+.page-header {
+    @extend .text-center;
+    @extend .mb-5;
+}
+
+.main {
+    @extend .mt-3;
+    @extend .mb-5;
+}
+
+
+
+
+
+
+
+.file-zoom-detail {
+    max-width: 100% !important;
+}

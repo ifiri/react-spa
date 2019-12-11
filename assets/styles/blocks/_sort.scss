@@ -1,0 +1,27 @@
+.sort {
+    &__icon {
+        @include svg-icon-by('sort');
+
+        margin-left: 5px;
+        fill: $sort-trigger-active-color;
+
+        position: absolute;
+        bottom: 50%;
+
+        margin-bottom: -7px; // 2px correction + half of icon height
+    }
+
+    &__trigger {
+        cursor: pointer;
+        white-space: nowrap;
+        position: relative;
+
+        &[data-sort-active] {
+            color: $sort-trigger-active-color;
+
+            &[data-sort-order="asc"] .sort__icon {
+                transform: rotateX(180deg);
+            }
+        }
+    }
+}

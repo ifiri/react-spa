@@ -1,0 +1,14 @@
+.progress {
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: bold;
+
+    vertical-align: middle;
+
+    color: $brand-color;
+
+    font-size: inherit;
+    background: none;
+
+    line-height: 1;
+}

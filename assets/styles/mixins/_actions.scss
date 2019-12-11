@@ -1,0 +1,30 @@
+@mixin actions() {
+    @include -actions-base();
+
+    .actions__left {
+        @include -actions-placement('left');
+    }
+
+    .actions__right {
+        @include -actions-placement('right');
+    }
+}
+
+@mixin -actions-base {
+    display: flex;
+}
+
+@mixin -actions-placement($direction) {
+    @if $direction == 'left' {
+        margin-right: auto;
+    }
+
+    @if $direction == 'right' {
+        margin-left: auto;
+    }
+
+    @if $direction == 'center' {
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

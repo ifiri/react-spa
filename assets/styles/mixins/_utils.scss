@@ -1,0 +1,4 @@
+@mixin fit-to-modal() {
+    margin-left: $modal-inner-padding-y * -1;
+    margin-right: $modal-inner-padding-y * -1;
+}

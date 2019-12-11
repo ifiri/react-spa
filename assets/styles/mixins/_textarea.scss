@@ -1,0 +1,5 @@
+@mixin textarea() {
+    @include input();
+
+    min-height: rem(200px);
+}

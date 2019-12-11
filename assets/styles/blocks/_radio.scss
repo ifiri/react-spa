@@ -1,0 +1,30 @@
+.radio {
+    overflow: visible;
+
+    label {
+        margin-bottom: 0 !important;
+    }
+
+    &__label {
+        display: block;
+    }
+
+    &__input {
+        vertical-align: middle;
+    }
+
+    &__caption {
+        vertical-align: middle;
+        padding-left: 5px;
+    }
+}
+
+.radio_type_inline {
+    .radio__label {
+        display: inline-block;
+
+        + .radio__label {
+            margin-left: rem(20px);
+        }
+    }
+}

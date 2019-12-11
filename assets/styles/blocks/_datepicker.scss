@@ -1,0 +1,19 @@
+.datepicker {
+    position: relative;
+    
+    &__field {
+        width: 100%;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        @include transition($input-transition);
+        @include input();
+    }
+
+    // Override default placement
+    .flatpickr-calendar {
+        top: 60px !important;
+        left: 0 !important;
+    }
+}

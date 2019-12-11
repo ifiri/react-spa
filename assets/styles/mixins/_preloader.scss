@@ -1,0 +1,11 @@
+@mixin preloader {
+    @include disclaimer();
+
+    margin-top: rem($preloader-top-margin);
+
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-fill-mode: backwards;
+    animation-timing-function: linear;
+}

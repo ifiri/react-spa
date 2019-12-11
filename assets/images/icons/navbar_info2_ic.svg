@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="24px" viewBox="0 0 25 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>Contacts</title>
+    <desc>Created with Sketch.</desc>
+    <g id="↳-Screens" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Usefull-Info-/-Edit-sight" transform="translate(-1157.000000, -20.000000)" fill="#FFFFFF">
+            <g id="Top-Header">
+                <g id="Group" transform="translate(171.000000, 20.000000)">
+                    <g id="Media-Copy" transform="translate(986.000000, 0.000000)">
+                        <path d="M5.07358025,10.3866667 C6.99358025,14.16 10.0869136,17.24 13.8602469,19.1733333 L16.7935802,16.24 C17.1535802,15.88 17.6869136,15.76 18.1535802,15.92 C19.6469136,16.4133333 21.2602469,16.68 22.9135802,16.68 C23.6469136,16.68 24.2469136,17.28 24.2469136,18.0133333 L24.2469136,22.6666667 C24.2469136,23.4 23.6469136,24 22.9135802,24 C10.3935802,24 0.24691358,13.8533333 0.24691358,1.33333333 C0.24691358,0.6 0.84691358,0 1.58024691,0 L6.24691358,0 C6.98024691,0 7.58024691,0.6 7.58024691,1.33333333 C7.58024691,3 7.84691358,4.6 8.34024691,6.09333333 C8.48691358,6.56 8.38024691,7.08 8.00691358,7.45333333 L5.07358025,10.3866667" id="Contacts"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

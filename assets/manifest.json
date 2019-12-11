@@ -1,0 +1,46 @@
+{
+  "dependencies": {
+    "main.css": {
+      "files": [
+        "vendor/cropperjs/dist/cropper.css",
+        "vendor/flatpickr/dist/flatpickr.css",
+        "vendor/ekko-lightbox/dist/ekko-lightbox.css",
+        "../node_modules/react-datepicker/dist/react-datepicker.css",
+        "styles/main.scss",
+        "styles/custom.css"
+      ]
+    },
+    "plugins.js": {
+      "files": [
+        "vendor/jquery/dist/jquery.js",
+        "vendor/bootstrap/dist/js/bootstrap.js",
+        "vendor/ekko-lightbox/dist/ekko-lightbox.js",
+        
+        "vendor/flatpickr/dist/flatpickr.js",
+        "vendor/flatpickr/dist/plugins/rangePlugin.js",
+        
+        "vendor/cropperjs/dist/cropper.js",
+        "vendor/list.js/dist/list.js",
+        
+        "vendor/bootstrap-fileinput/js/fileinput.js"
+      ],
+      "main": true
+    }
+  },
+  "config": {
+    "paths": {
+      "styles": "styles",
+      "scripts": "scripts",
+      "fonts": "fonts",
+      "images": "images",
+      "templates": "templates",
+      "sprites": "images/sprites"
+    },
+    "sprites": {
+      "svg": {
+        "imagename": "sprite.svg",
+        "cssname": "sprites/_sprite-svg.scss"
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.checkbox {
+    @include -checkbox-base();
+
+    &__field {
+        @include -checkbox-field();
+    }
+
+    &__input {
+        @include -checkbox-input('.checkbox');
+    }
+}

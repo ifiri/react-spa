@@ -1,0 +1,157 @@
+.header {
+    color: $header-color;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: $header-z-index;
+
+    transform: translate(0%, -25%);
+    opacity: 0;
+
+    @media print { 
+        display: none !important;
+    }
+
+    &__container {
+        @include make-container-max-widths();
+
+        display: flex;
+        align-items: baseline;
+
+        // height: rem($header-height);
+        // max-width: rem($header-max-width);
+        width: 100%;
+
+        padding: rem($header-padding-y) rem($header-padding-x);
+        margin: 0 auto;
+
+        position: relative;
+    }
+
+    &__brand {
+        width: rem($header-brand-width);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: $header-color;
+
+        margin-right: rem($grid-gutter-width / 2);
+
+        white-space: nowrap;
+        font-size: rem($header-brand-font-size);
+        font-weight: $header-brand-font-weight;
+
+        &:hover {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+
+    &__menus {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        flex-grow: 10;
+    }
+
+    &__navigation {
+        @include make-container();
+        @include make-container-max-widths();
+        
+        width: auto;
+        margin: 0;
+
+        flex-grow: 10;
+    }
+
+    &__menu {
+        font-size: rem($header-menu-font-size);
+        margin: 0 auto !important;
+        text-align: center;
+
+        padding-bottom: 0.15em !important;
+    }
+
+    &__logout-wrapper {
+        color: $logout-color;
+
+        margin-left: 0 !important;
+
+        position: absolute;
+        right: 0;
+    }
+
+    &__logout {
+        @include clear-text-decoration();
+        
+        text-transform: capitalize !important;
+    
+        font-weight: 600;
+        font-size: rem($logout-font-size) !important;
+        line-height: 1;
+
+        background-color: $white !important;
+
+        &:hover {
+            color: $logout-hover-color;
+        }
+
+        a {
+            color: inherit;
+        }
+    }
+
+    &__back {
+        position: absolute;
+        left: 0;
+
+        .icon {
+            font-size: 1em;
+            vertical-align: text-top;
+            color: #fefefe;
+            fill: #fefefe;
+        }
+    }
+
+    &__top {
+        background-color: $header-top-background;
+
+        .brand {
+            position: absolute;
+            left: 0;
+        }
+    }
+
+    &__bottom {
+        background-color: $header-bottom-background;
+    }
+
+    &__inner {
+        // @include make-container();
+        @include make-container-max-widths();
+
+        position: relative;
+
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 0 80px;
+        box-sizing: content-box;
+    }
+
+    .app_page_auth & {
+        display: none;
+    }
+}
+
+.header_shown {
+    animation-name: fade;
+    animation-duration: 250ms;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+}

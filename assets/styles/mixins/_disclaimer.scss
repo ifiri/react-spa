@@ -1,0 +1,7 @@
+@mixin disclaimer() {
+    font-size: rem($disclaimer-font-size);
+    font-weight: $disclaimer-font-weight;
+    text-align: center;
+
+    color: $disclaimer-color;
+}

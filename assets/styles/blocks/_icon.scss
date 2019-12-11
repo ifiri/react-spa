@@ -1,0 +1,64 @@
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+
+    width: 1em;
+    height: 1em;
+
+    fill: inherit;
+    
+    margin-right: rem($icon-left-margin);
+
+    &__corner {
+        // ...
+    }
+
+
+
+    &__load {
+        // ...
+    }
+
+    &__plus {
+        @include svg-icon-by('plus');
+    }
+
+    &__plus-square {
+        @include svg-icon-by('plus-square');
+
+        vertical-align: text-bottom;
+    }
+
+    &__print {
+        @include svg-icon-by('print');
+
+        vertical-align: text-bottom;
+    }
+
+    &__download {
+        @include svg-icon-by('download');
+
+        vertical-align: text-bottom;
+    }
+
+    &__trash {
+        @include svg-icon-by('trash');
+    }
+
+    &__view {
+        @include svg-icon-by('view');
+
+        margin-right: 0;
+    }
+
+    &__times {
+        @include svg-icon-by('times-square');
+
+        vertical-align: text-bottom;
+    }
+
+    .action & {
+        position: relative;
+        vertical-align: middle;
+    }
+}

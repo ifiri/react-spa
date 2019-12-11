@@ -1,0 +1,43 @@
+.content {
+    min-height: rem($content-min-height);
+    border-top: $content-border;
+
+    padding-bottom: rem($content-padding-bottom);
+
+    position: relative;
+
+    &__fragment {
+        @include make-container();
+        @include make-container-max-widths();
+
+        position: relative;
+        border: 1px solid transparent;
+        
+        .modal & {
+            padding-left: $grid-gutter-width / 4;
+            padding-right: $grid-gutter-width / 4;
+        }
+    }
+
+    &__filter-area {
+        padding-left: $grid-gutter-width / 2;
+        padding-right: $grid-gutter-width / 2;
+
+        margin: 2rem auto 2rem;
+
+        display: flex;
+
+        background-color: $content-filter-area-bg;
+
+        .modal & {
+            padding-left: $grid-gutter-width / 4;
+            padding-right: $grid-gutter-width / 4;
+
+            background-color: transparent;
+        }
+    }
+
+    &__container {
+        //
+    }
+}

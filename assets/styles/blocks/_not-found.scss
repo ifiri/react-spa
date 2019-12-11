@@ -1,0 +1,25 @@
+.not-found {
+    @include disclaimer();
+
+    margin-top: rem($not-found-top-margin);
+    margin-bottom: rem($not-found-top-margin);
+
+    text-align: center;
+
+    .content & {
+        margin-top: rem(80px);
+        margin-bottom: rem(80px);
+    }
+
+    .bank & {
+        margin-top: rem(20px);
+        margin-bottom: rem(20px);
+    }
+
+    .currency-courses & {
+        margin-top: rem(10px);
+        margin-bottom: rem(20px);
+
+        padding-left: rem(50px);
+    }
+}

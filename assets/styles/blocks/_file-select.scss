@@ -1,0 +1,141 @@
+.file-select {
+    position: relative;
+
+    display: flex;
+    align-items: stretch;
+
+    margin-top: rem(16px) !important;
+
+    &__file {
+        @include position(absolute, 0 auto auto 0);
+
+        opacity: 0;
+
+        z-index: -1;
+    }
+
+    &__remove {
+        @extend .action;
+        @extend .action_type_field-remove;
+
+        margin-left: rem($file-select-remove-offset);
+    }
+
+    &__img {
+        max-width: 100%;
+        max-height: 100px;
+        width: auto;
+    }
+
+    &__canvas {
+        height: rem($file-select-preview-height);
+        width: rem($file-select-preview-width);
+
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center center;
+
+        cursor: pointer;
+    }
+
+    &__logo-upload,
+    &__logo-manage {
+        display: flex;
+
+        flex-direction: column;
+        align-items: center;
+
+        margin: 0 auto;
+    }
+
+    &__btn-wrapper {
+        margin-bottom: 0;
+
+        &:not(:last-child) {
+            .file-select__btn {
+                border-bottom-right-radius: 0 !important;
+                border-top-right-radius: 0 !important;
+            }
+        }
+    }
+
+    &__btn {
+        @include button();
+
+        border-bottom-left-radius: 0 !important;
+        border-top-left-radius: 0 !important;
+
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        text-transform: none !important;
+
+        vertical-align: top;
+
+        &:disabled,
+        &:disabled > span {
+            background-color: lighten($brand-blue, 25%);
+            pointer-events: none;
+        }
+
+        &:not(:last-child) {
+            border-bottom-right-radius: 0 !important;
+            border-top-right-radius: 0 !important;
+        }
+    }
+
+    &__view {
+        @include button();
+        // @include button-variant($success, $success);
+
+        height: 37px !important;
+
+        border-bottom-left-radius: 0 !important;
+        border-top-left-radius: 0 !important;
+
+        background-color: $success !important;
+        color: $white !important;
+
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+
+        &:active, &:focus, &:hover {
+            background-color: darken($success, 15%) !important;
+            color: $white !important;
+
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+    }
+
+    &__caption {
+        width: 100%;
+
+        margin: 0 !important;
+        margin-top: rem(-16px) !important;
+
+        input {
+            height: 37px;
+
+            padding-bottom: 0 !important;
+            padding-top: 0 !important;
+
+            padding-left: rem($form-input-side-padding);
+            padding-right: rem($form-input-side-padding);
+            
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+        }
+    }
+
+    &_type_meetup {
+        margin: 0;
+        width: 100%;
+    }
+}

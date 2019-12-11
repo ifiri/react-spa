@@ -1,0 +1,71 @@
+.data {
+    &_loading {
+        @include preloader();
+    }
+
+    &_loaded,
+    &_searching,
+    &_searched {
+        animation-duration: $animation-time;
+        animation-fill-mode: both;
+        animation-timing-function: ease-in-out;
+    }
+
+    &_loaded {
+        animation-name: fade;
+    }
+
+    &_searching {
+        animation-name: fade2;
+    }
+
+    &_searched {
+        animation-name: fade2-reverse;
+    }
+    
+
+    &_searching, 
+    &_searched {
+        @include position(absolute, 0 -50vw 0 -50vw);
+
+        height: 100%;
+        pointer-events: none;
+        border-top: 1px solid transparent;
+
+        z-index: 100;
+
+        &::before {
+            @include position(absolute, 0 0 rem(-50px) 0);
+
+            content: "";
+            display: block;
+
+            background-color: $white;
+            z-index: 10;
+        }
+
+        &::after {
+            content: $searching-animation-text;
+
+            position: absolute;
+            top: 79px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            text-align: center;
+
+            font-weight: $disclaimer-font-weight;
+            font-size: $disclaimer-font-size;
+            color: $disclaimer-color;
+
+            animation-name: blink;
+            animation-duration: $searching-animation-time;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+
+            z-index: 20;
+        }
+    }
+}

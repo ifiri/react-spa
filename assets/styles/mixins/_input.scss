@@ -1,0 +1,32 @@
+@mixin input() {
+    width: 100%;
+    min-height: rem(38px);
+
+    padding-top: em($input-padding-top, $input-font-size);
+    padding-bottom: em($input-padding-bottom, $input-font-size);
+    padding-left: em($input-padding-x, $input-font-size);
+    padding-right: em($input-padding-x, $input-font-size);
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: inherit;
+    border-radius: 3px;
+    border-color: $input-border-color;
+
+    font-family: $font-family-base;
+    font-size: rem($input-font-size);
+
+    color: $input-color;
+    background-color: $white;
+
+    &:active:not(:disabled), 
+    &:focus:not(:disabled) {
+        border-color: $input-focus-border-color;
+        outline: 0;
+        box-shadow: $input-focus-box-shadow;
+    }
+
+    &:disabled {
+        color: $input-disabled-color;
+    }
+}

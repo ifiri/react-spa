@@ -1,0 +1,19 @@
+.label {
+    display: inline-block;
+
+    &__caption {
+        margin-bottom: $label-margin-bottom;
+        display: inline-block;
+    }
+
+    &__required {
+        color: $danger;
+        margin-left: rem(5px);
+    }
+
+    &__description {
+        font-weight: normal;
+        margin-left: rem($label-description-offset);
+        font-size: $label-description-font-size;
+    }
+}

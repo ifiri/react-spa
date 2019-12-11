@@ -1,0 +1,28 @@
+.error {
+    @include disclaimer();
+
+    margin-top: rem($error-top-margin);
+    margin-bottom: rem($error-bottom-margin);
+
+    text-align: center;
+
+    .content & {
+        margin-top: rem($error-top-margin-in-content);
+    }
+
+    .app & {
+        margin: 0;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+    }
+
+    .app_page_logout & {
+        color: $white;
+
+        z-index: 100000;
+    }
+}

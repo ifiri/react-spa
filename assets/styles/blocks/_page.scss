@@ -1,0 +1,44 @@
+.page {
+    &__title {
+        @include make-container-max-widths();
+
+        text-align: center;
+
+        margin: 1rem auto 3rem;
+
+        &_variant_secondary {
+            width: auto;
+            margin-right: auto;
+            font-size: 25px;
+            color: #455a64;
+            font-weight: normal;
+
+            display: inline-block;
+
+            text-align: left;
+            margin: 0;
+        }
+    }
+}
+
+.content {
+    transition: filter 100ms ease-in-out;
+}
+
+.page_state_modal-open {
+    overflow: hidden;
+
+    // .app {
+    //     overflow: hidden;
+    // }
+
+    .modal {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .content {
+        filter: blur(3px);
+
+    }
+}

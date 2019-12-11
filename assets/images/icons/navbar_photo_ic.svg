@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="20px" viewBox="0 0 23 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>navbar_photo_ic</title>
+    <desc>Created with Sketch.</desc>
+    <g id="↳-Screens" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Event-Info-/-New-section" transform="translate(-1112.000000, -22.000000)" fill="#FEFEFE">
+            <g id="Top-Header">
+                <g id="Group" transform="translate(240.000000, 22.000000)">
+                    <g id="Media" transform="translate(872.000000, 0.000000)">
+                        <path d="M7.78641975,0 L5.75082716,2.22222222 L2.22469136,2.22222222 C1.00111111,2.22222222 0,3.22222222 0,4.44444444 L0,17.7777778 C0,19 1.00111111,20 2.22469136,20 L20.0222222,20 C21.2458025,20 22.2469136,19 22.2469136,17.7777778 L22.2469136,4.44444444 C22.2469136,3.22222222 21.2458025,2.22222222 20.0222222,2.22222222 L16.4960864,2.22222222 L14.4604938,0 L7.78641975,0 L7.78641975,0 Z M11.1234568,16.6666667 C8.05338272,16.6666667 5.5617284,14.1777778 5.5617284,11.1111111 C5.5617284,8.04444444 8.05338272,5.55555556 11.1234568,5.55555556 C14.1935309,5.55555556 16.6851852,8.04444444 16.6851852,11.1111111 C16.6851852,14.1777778 14.1935309,16.6666667 11.1234568,16.6666667 L11.1234568,16.6666667 Z" id="navbar_photo_ic"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
